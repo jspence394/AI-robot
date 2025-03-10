@@ -4,10 +4,10 @@
 set -e
 
 echo "🚀 Installing dependencies..."
-sudo apt update && sudo apt install -y curl g++ libcurl4-openssl-dev libjsoncpp-dev aplay git wget
+sudo apt update && sudo apt install -y curl g++ libcurl4-openssl-dev libjsoncpp-dev alsa-utils wget git
 
 echo "🔄 Cloning chatbot project..."
-git clone https://github.com/YOUR-USERNAME/chatbot-project.git ~/chatbot-project || (cd ~/chatbot-project && git pull)
+git clone https://github.com/jspence394/AI-robot.git ~/AI-robot || (cd ~/AI-robot && git pull)
 
 echo "🎙️ Installing Piper..."
 mkdir -p ~/.local/bin
@@ -20,7 +20,7 @@ mkdir -p ~/.local/share/piper/en_US-danny
 wget https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/danny/low/en_US-danny-low.onnx -O ~/.local/share/piper/en_US-danny/en_US-danny-low.onnx
 
 echo "🛠️ Compiling chatbot..."
-cd ~/chatbot-project
+cd ~/AI-robot
 g++ chatbot.cpp -o chatbot -lcurl -ljsoncpp
 
 echo "📂 Moving chatbot to /usr/local/bin..."
