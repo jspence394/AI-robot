@@ -8,7 +8,7 @@
 #include <sstream>
 #include <iterator>
 
-const std::string API_KEY = "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";
+const std::string API_KEY = "";
 const std::string API_URL = "https://api.openai.com/v1/chat/completions";
 
 // Function to handle CURL response
